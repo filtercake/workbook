@@ -28,3 +28,13 @@ var fs = require('fs');
 buffer = fs.readFileSync(process.argv[2]);
 // convert buffer to string, split at \n, count the resulting array. this would be 'count of paragraphs'.
 console.log(buffer.toString().split('\n').length);
+
+
+
+
+
+
+// https://github.com/maxogden/art-of-node#callbacks
+
+// Node handles I/O with: callbacks, events, streams and modules.
+
