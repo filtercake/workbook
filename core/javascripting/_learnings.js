@@ -15,6 +15,16 @@ var pizza = 'pizza is alright';
 pizza = pizza.replace('alright', 'wonderful');
 console.log( pizza );
 
+// filter array
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var evenNumbers = numbers.filter( function (number) {
+  return number % 2 === 0;
+});
+console.log( evenNumbers )
+// Q: how would I refactor the callback to an external function?
+
+
+
 
 /// MATH
 var roundUp = 1.5;
