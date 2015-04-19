@@ -43,6 +43,7 @@ if (fruit.length > 5) {
     console.log('The fruit name has five characters or less.');
 };
 
+
 // for
 var total = 0;
 var limit = 10;
@@ -51,3 +52,15 @@ for (var i = 0; i < limit; i++) {
 };
 console.log(total);
 // note: starting at 0 => i < 10 => still 10 runs but different result than starting at 1 and i <= 10
+
+// for through array
+// note:
+//    pets.length = 3
+//    i < 3 => 0,1,2
+//    index *smaller* than length works because index starts at 0
+var pets = ['cat', 'dog', 'rat'];
+for ( var i = 0; i < pets.length; i++) {
+  pets[i] = pets[i] + 's';
+}
+console.log( pets );
+
