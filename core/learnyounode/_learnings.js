@@ -1,33 +1,33 @@
+// expects a file lorem.txt. see end of file.
+var fs = require('fs');
 
+// async:
 
+buffer = fs.readFile(process.argv[2], tellLines)
+// taking err and data is standard/idiomatic. but: how do i pass additional data? may/should I not do that?
+function tellLines (err, data) {
+  var lines = data.toString().split('\n').length -1
+  console.log('lines: '+lines)
+}
 
-/* expects a file lorem.txt with the following content:
-
-Cupcake ipsum dolor. Sit amet I love bonbon* bear claw tootsie roll jelly.* I love chocolate ice cream* chupa chups I love. Gummi bears I love wafer marzipan jujubes sweet tootsie roll bear claw. Dessert gingerbread dragée sweet roll liquorice
-fruitcake marzipan donut. I love I love sugar plum marshmallow jujubes. Cotton candy jujubes oat cake chocolate cake chocolate cake marshmallow bear claw chocolate cake. Jelly cupcake gingerbread I love cupcake sesame snaps apple
-pie oat cake.
-
-*/
-
-
-// process arguments
+// process arguments, sync
 
 // process.argv is an array
-console.log(process.argv)
+console.log('process.argv: '+process.argv)
 // 0: node
 // 1: name of program
 // 2+ arguments
 // arguments are strings, convert with Number(process.argv[i])
 
 // print first argument
-console.log(process.argv[2])
+console.log('process.argv[2]: '+process.argv[2])
 
 // file system
 var fs = require('fs');
 // read file into buffer
 buffer = fs.readFileSync(process.argv[2]);
 // convert buffer to string, split at \n, count the resulting array. this would be 'count of paragraphs'.
-console.log(buffer.toString().split('\n').length);
+console.log('lines(not -1): '+buffer.toString().split('\n').length);
 
 
 
@@ -38,3 +38,14 @@ console.log(buffer.toString().split('\n').length);
 
 // Node handles I/O with: callbacks, events, streams and modules.
 
+
+
+
+
+/* content of lorem.txt:
+
+Cupcake ipsum dolor. Sit amet I love bonbon* bear claw tootsie roll jelly.* I love chocolate ice cream* chupa chups I love. Gummi bears I love wafer marzipan jujubes sweet tootsie roll bear claw. Dessert gingerbread dragée sweet roll liquorice
+fruitcake marzipan donut. I love I love sugar plum marshmallow jujubes. Cotton candy jujubes oat cake chocolate cake chocolate cake marshmallow bear claw chocolate cake. Jelly cupcake gingerbread I love cupcake sesame snaps apple
+pie oat cake.
+
+*/
