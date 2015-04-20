@@ -3,12 +3,16 @@
 // Node handles I/O with: callbacks, events, streams and modules.
 
 
-var fs = require('fs')
+var fs = require('fs');
 
-if (process.argv[2]) {
-  fs.readFile(process.argv[2], finishedReading)
-} else {
-  console.log('please provide an argument')
+
+module.exports.parseFile = function(filepath, options) {
+  readFile(filepath, finishedReading);
+};
+
+
+function readFile(filepath, cb) {
+  fs.readFile(filepath, cb)
 }
 
 
@@ -25,6 +29,13 @@ function finishedReading(error, fileData) {
   console.log(fileObject);
 }
 
+
+
+if (process.argv[2]) {
+  fs.readFile(process.argv[2], finishedReading)
+} else {
+  console.log('please provide an argument')
+}
 
 
 
